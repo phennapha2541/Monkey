@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Onsen App</title>
+
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
+
+</head>
+
+<style>
+    #mypage .div {
+        top:0;
+    }
+</style>
+
+<body>
+    <ons-navigator id="myNavigator" page="register.html">
+    </ons-navigator>
+    <center>
+        <ons-page id='mypage2'>
+            <div>
+                <p>
+                    <img src="image/regislogo.jpg" alt="Logo register" style="width:410px; height:100px;">
+                </p>
+
+                <p>Create an Account?</p>
+
+                <p style="margin-top: 30px; border: 1px solid Gray; border-radius: 7px; width: 280px;">
+                    <ons-input id="username" placeholder="Full Name" float></ons-input>
+                    <ons-input id="email" placeholder="Email Address" float></ons-input>
+                    <ons-input id="phonenumber" placeholder="Phone Number" float></ons-input>
+                </p>
+
+                <p style="margin-top: 30px; border: 1px solid Gray; border-radius: 7px; width: 280px;">
+                    <ons-input id="password" type="password" placeholder="Password" float></ons-input>
+                </p>
+
+                <p style="margin-top: 30px;">
+                    <ons-button onclick="login()">Sign in</ons-button>
+                </p><br />
+
+                <p>
+                    <button class="button--large--cta" style="width: 280px; border-radius: 7px; margin: 0 auto;">Sign In
+                        using
+                        Facebook</button>
+                </p>
+
+                <p>
+                    <p>Don't have an account?</p>
+                    <button class="button--large--cta" style="width: 280px; border-radius: 7px; margin: 0 auto;">Create
+                        Account</button>
+                </p>
+            </div>
+
+        </ons-page>
+    </center>
+</body>
+
+</html>
