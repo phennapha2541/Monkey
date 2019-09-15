@@ -15,7 +15,7 @@
 <body>
 
 <!-- First navigation component: Navigator. This will remain always on top of the app. -->
-<ons-navigator id="myNavigator" page="splitter.html">
+<ons-navigator swipeable id="myNavigator" page="home.html">
 </ons-navigator>
 
  <!-- Second navigation component: Splitter. This will disappear if the first component changes its content. -->
@@ -24,7 +24,7 @@
       <ons-splitter id="mySplitter">
         <ons-splitter-side id="menu" page="menu.html" swipeable width="250px" collapse swipe-target-width="50px">
         </ons-splitter-side>
-        <ons-splitter-content id="content" page="tabbar.html">
+        <ons-splitter-content id="content" page="login.html">
         </ons-splitter-content>
       </ons-splitter>
     </ons-page>
@@ -55,6 +55,10 @@
     
     <ons-template id="settings.html">
       ...
+    </ons-template>
+
+    <ons-template id=".html">
+        ...
     </ons-template>
 
   <script>

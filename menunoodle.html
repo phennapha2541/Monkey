@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Onsen App</title>
+
+    <script src="lib/onsen/js/onsenui.js"></script>
+    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
+
+</head>
+
+<body>
+    <ons-navigator id="myNavigator" page="menunoodle.html">
+    </ons-navigator>
+    <center>
+        <ons-page id='mypage'>
+            <ons-navigator title="Navigator" var="myNavigator">
+                <ons-page>
+                    <ons-toolbar>
+                        <div class="center">FoodMonkey</div>
+                    </ons-toolbar>
+                    <ons-card>
+                        <ons-scroller>
+                            <div class="center">
+                                <div class="left">
+                                    <ons-row>
+                                        <ons-col>
+                                            <img src="image/r1.jpg" alt="Chinese" style="width:130px;height:100px;">
+                                            <center></center></img>
+                                        </ons-col>
+                                        <ons-col>
+                                            <h2>The Noodle</h2>
+                                            <p style="opacity: 0.6; padding-top: 2px;">
+                                                Min Delivery : $25 / Open
+                                            </p>
+                                        </ons-col>
+                                    </ons-row>
+                                </div>
+                                <div>
+                                    <span><img src="image/star1.png" alt="Chinese"
+                                            style="width:100px;height:40px;"></img></span>
+                                    <p6 style="opacity: 0.4; padding-top: 0px;">
+                                        27 Reviews
+                                    </p6>
+                                </div>
+                            </div>
+                            <ons-list>
+                                <ons-list-header>Starters</ons-list-header>
+                                <ons-row>
+                                    <ons-list-item modifier="tappable">Chicken Soup</ons-list-item>
+                                </ons-row>
+                                <ons-row>
+                                    <ons-list-item modifier="tappable">Chicken Chowmein</ons-list-item>
+                                </ons-row>
+                                <ons-row>
+                                    <ons-list-item modifier="tappable">Beef Noodles Guacmole</ons-list-item>
+                                </ons-row>
+
+                                <ons-list-header>Mains</ons-list-header>
+                                <ons-list-item modifier="tappable">The Noodle Special Sauce</ons-list-item>
+                                <ons-list-item modifier="tappable">The Prawn Noodle Bowl</ons-list-item>
+                                <ons-list-item modifier="tappable">Honey Chicken with Fried Rice</ons-list-item>
+                                <ons-list-item modifier="tappable">Avacado Beef Chilli and Noodles</ons-list-item>
+                            </ons-list>
+                        </ons-scroller>
+                    </ons-card>
+                </ons-page>
+    </center>
+</body>
+
+</html>
