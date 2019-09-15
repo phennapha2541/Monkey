@@ -68,6 +68,11 @@
                                 <ons-list-item modifier="tappable">Avacado Beef Chilli and Noodles</ons-list-item>
                             </ons-list>
                         </ons-scroller>
+                        <ons-button onclick="myToast.toggle()">Confirm Oder</ons-button>
+                        <ons-toast id="myToast" animation="ascend">
+                            Your Order : $34
+                            <button onclick="myToast.hide()">Order</button>
+                        </ons-toast>
                     </ons-card>
                 </ons-page>
     </center>
