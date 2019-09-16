@@ -14,6 +14,12 @@
 
 </head>
 
+<style>
+    #mypage .page__background {
+        background-color: gold;
+    }
+</style>
+
 <body>
     <ons-navigator id="myNavigator" page="menunoodle.html">
     </ons-navigator>
@@ -29,7 +35,7 @@
                             <div class="center">
                                 <div class="left">
                                     <ons-row>
-                                        <ons-col>
+                                        <ons-col width="45%">
                                             <img src="image/r1.jpg" alt="Chinese" style="width:130px;height:100px;">
                                             <center></center></img>
                                         </ons-col>
@@ -52,13 +58,33 @@
                             <ons-list>
                                 <ons-list-header>Starters</ons-list-header>
                                 <ons-row>
-                                    <ons-list-item modifier="tappable">Chicken Soup</ons-list-item>
+                                    <ons-col>
+                                        <ons-list-item modifier="tappable">Chicken Soup</ons-list-item>
+                                    </ons-col>
+                                    <ons-col width="70px">
+                                        <ons-list-item modifier="tappable">$12</ons-list-item>
+                                    </ons-col>
+                                    <ons-col width="50px">
+                                        <ons-button modifier="material">+</ons-button>
+                                    </ons-col>
                                 </ons-row>
                                 <ons-row>
                                     <ons-list-item modifier="tappable">Chicken Chowmein</ons-list-item>
+                                    <ons-col>
+                                        <ons-list-item modifier="tappable">Soft Drinks(Cock)</ons-list-item>
+                                    </ons-col>
+                                    <ons-col width="70px">
+                                        <ons-list-item modifier="tappable">$8.5</ons-list-item>
+                                    </ons-col>
                                 </ons-row>
                                 <ons-row>
                                     <ons-list-item modifier="tappable">Beef Noodles Guacmole</ons-list-item>
+                                    <ons-col>
+                                        <ons-list-item modifier="tappable">Soft Drinks(Cock)</ons-list-item>
+                                    </ons-col>
+                                    <ons-col width="70px">
+                                        <ons-list-item modifier="tappable">$8.5</ons-list-item>
+                                    </ons-col>
                                 </ons-row>
 
                                 <ons-list-header>Mains</ons-list-header>
