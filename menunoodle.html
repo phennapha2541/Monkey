@@ -176,8 +176,13 @@
                         <ons-button onclick="myToast.toggle()">Confirm Oder</ons-button>
                         <ons-toast id="myToast" animation="ascend">
                             Your Order : $34
-                            <button onclick="myToast.hide()">Order</button>
+                            <button onclick="fastfood()">Order</button>
                         </ons-toast>
+                        <script>
+                        function fastfood() {
+                            window.location.href='order.html'
+                          }
+                        </script>
                     </ons-card>
                 </ons-page>
     </center>

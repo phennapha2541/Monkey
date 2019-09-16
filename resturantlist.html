@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
 
 </head>
+<style>
+    #mypage .page__background {
+        background-color: gold;
+    }
+</style>
 
 <body>
     <ons-navigator id="myNavigator" page="login.html">
@@ -28,7 +33,14 @@
                         <ons-list-header>Resturant</ons-list-header>
                         <ons-card>
                             <ons-list-header>The Noodle</ons-list-header>
-                            <ons-list-item modifier="chevron" tappable>Viwe Menu</ons-list-item>
+                            <ons-list-item modifier="chevron" onclick="datailResturant()" tappable>Viwe Menu
+                            </ons-list-item>
+                            <script>
+                                function datailResturant() {
+                                    window.location.href = 'menunoodle.html'
+                                }
+
+                            </script>
                             <ons-row>
                                 <ons-col>
                                     <div class="left">
@@ -48,7 +60,8 @@
 
                         <ons-card>
                             <ons-list-header>Subway</ons-list-header>
-                            <ons-list-item modifier="chevron" tappable>Viwe Menu</ons-list-item>
+                            <ons-list-item modifier="chevron" tappable onclick="datailResturant()">Viwe Menu
+                            </ons-list-item>
                             <ons-row>
                                 <ons-col>
                                     <div class="left">
@@ -153,6 +166,8 @@
 
         </ons-page>
     </center>
+
+
 </body>
 
 </html>

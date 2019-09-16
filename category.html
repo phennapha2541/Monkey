@@ -16,7 +16,7 @@
 
 <style>
     #mypage .page__background {
-        background-color: rgb(248, 219, 53);
+        background-color: gold;
     }
 </style>
 
@@ -59,10 +59,16 @@
             <ons-card>
                 <center>
                     <ons-row>
-                        <ons-col style="border:1px solid #ccc; height: 130px;">
+                        <ons-col onclick="fastfood()"style="border:1px solid #ccc; height: 130px;">
                             <img src="image/item1.jpg" alt="Fast Food" style="width:130px;height:100px;">
                             <center>Fast Food</center></img>
                         </ons-col>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <script>
+                            function fastfood() {
+                              window.location.href='resturantlist.html'
+                            }
+                            
+                            </script>
                         <ons-col style="border:1px solid #ccc; height: 130px;">
                             <img src="image/item2.png" alt="Kebabs" style="width:130px;height:100px;">
                             <center>Kebabs</center></img>

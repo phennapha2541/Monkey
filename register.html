@@ -30,8 +30,8 @@
                     <center>
                 <div>
                     <p>
-                        <img src="image/regislogo.jpg" align="top" alt="Logo register"
-                            style="width:100%; height:80px;">
+                        <img src="image/regislogo.jpg"  alt="Logo register"
+                            style="width:100%; height:80%; margin: -20px;">
                     </p>
 
                     <p><ons-icon size="30px" icon="md-face"></ons-icon></p>
@@ -56,9 +56,15 @@
                     </p>
 
                     <p>
-                        <ons-button id="registerbt" class="button--large--cta"
-                            style="background-color: rgb(197, 148, 207);width: 280px; border-radius: 7px; margin: 0 auto;">
+                        <ons-button id="registerbt" onclick="register()" class="button--large--cta"
+                            style="background-color: rgb(197, 148, 207);width: 280px; border-radius: 7px; margin: 0 auto;"> 
                             Register</ons-button>
+                            <script>
+                                function register() {
+                                  window.location.href='login.html'
+                                }
+                                
+                                </script>
                     </p>
 
                     <p style="align-content: center; color:Gray;">or</p>

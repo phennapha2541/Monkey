@@ -11,13 +11,14 @@
   <script src="lib/jquery/jquery-3.4.1.min.js"></script>
   <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
   <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
-
-</head>
-
+  <!-- link font -->
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Saira+Stencil+One&display=swap" rel="stylesheet">
 <style>
   #login .page__background {
     background-color: gold;
   }
+
+
 </style>
 
 <body>
@@ -27,10 +28,10 @@
     <ons-page id='login'>
       <div>
         <p>
-              <img src="image/logom.jpg" alt="Logo FoodMonkey" style="width:130px;height:100px;"><h1>FoodMonkey</h1>
+              <img src="image/logom.jpg" alt="Logo FoodMonkey" style="width:130px;height:100px; "><h1 style="font-family: 'Lobster', cursive; font-size: 30px" id="text" >FoodMonkey</h1>
         </p>
 
-        <p>Do you have a FoodMonkey account?</p>
+        <p style=" font-family: 'Squada One', cursive;">Do you have a FoodMonkey account?</p>
 
         <p style="margin-top: 30px; border: 1px solid Gray; border-radius: 7px; width: 280px;">
           <ons-input id="email" placeholder="Email" float></ons-input>
@@ -61,6 +62,11 @@
 
     </ons-page>
   </center>
+  <script>
+  function login() {
+    window.location.href='category.html'
+  } 
+  </script>
 </body>
 
 </html>
