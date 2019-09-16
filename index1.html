@@ -14,29 +14,57 @@
     <script src="menu.js"></script>
     <script src="js/onsenui.min.js"></script>
 
-    <!-- เรียกใช้ style sheet และ javascript จาก onsen ui -->
 </head>
 
+<style>
+    #loginpage .page__background {
+        background-color: gold;
+    }
+</style>
+
 <body>
-    <ons-navigator swipeable id="myNavigator" page="page1.html"></ons-navigator>
+    <ons-navigator swipeable id="myNavigator" page="login.html"></ons-navigator>
 
-    <template id="page1.html">
+    <template id="login.html">
 
-        <ons-page id="page1">
-            <div style="text-align: center; margin-top: 70px;">
-                <div class="logo"> <img src="foood.png" width="200" height="200"></div>
-                <ons-card>
-
-                    <div class="group" style="margin: 15px;">
-                        <label for="user" class="label">Username</label>
-                        <input id="user" type="text" class="input">
-                    </div>
-                    <div class="group" style="margin: 15px">
-                        <label for="pass" class="label">Password</label>
-                        <input id="pass" type="password" class="input" data-type="password">
-                    </div>
-                </ons-card>
-                <!-- ปุ่ม Push page เมื่อกดแล้วจะทำงานที่ function change_page() -->
+            <center>
+                    <ons-page id='login'>
+                      <div>
+                        <p>
+                              <img src="image/logom.jpg" alt="Logo FoodMonkey" style="width:130px;height:100px;"><h1>FoodMonkey</h1>
+                        </p>
+                
+                        <p>Do you have a FoodMonkey account?</p>
+                
+                        <p style="margin-top: 30px; border: 1px solid Gray; border-radius: 7px; width: 280px;">
+                          <ons-input id="email" placeholder="Email" float></ons-input>
+                        </p>
+                
+                        <p style="margin-top: 30px; border: 1px solid Gray; border-radius: 7px; width: 280px;">
+                          <ons-input id="password" type="password" placeholder="Password" float></ons-input>
+                        </p>
+                
+                        <p style="margin-top: 30px;">
+                          <ons-button id="loginbt" onclick="login()">Sign in</ons-button>
+                        </p>
+                
+                        <p style="align-content: center; color:Gray;">or</p>
+                
+                        <p>
+                          <ons-button onclick="change_page1()" id="push-button" class="button--large--cta"
+                            style="background-color: rgb(15, 18, 247);width: 280px; border-radius: 7px; margin: 0 auto;">Sign In using
+                            Facebook</ons-button>
+                        </p>
+                
+                        <p>
+                          <p>Don't have an account?</p>
+                          <ons-button onclick="change_page2()" id="push-button" class="button--large--cta"
+                            style="background-color: rgb(197, 148, 207);width: 280px; border-radius: 7px; margin: 0 auto;">Register</ons-button>
+                        </p>
+                      </div>
+                
+                    </ons-page>
+                  </center>
                 <div class="buton">
                     <ons-button onclick="change_page1()" id="push-button">GO</ons-button>
                     <ons-button onclick="change_page2()" id="push-button">register</ons-button>
