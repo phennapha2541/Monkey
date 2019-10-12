@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="ejs.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <script src="cordova.js"></script>
+    
+    
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDucXID_-K8ke10dz8lvoA3PYHY4w6OQJI",
+            authDomain: "shopee-77a26.firebaseapp.com",
+            databaseURL: "https://shopee-77a26.firebaseio.com",
+            projectId: "shopee-77a26",
+            storageBucket: "shopee-77a26.appspot.com",
+            messagingSenderId: "23415238409"
+        };
+        firebase.initializeApp(config);
+
+        // Initialize Cloud Firestore through Firebase
+        var db = firebase.firestore();
+
+        // Disable deprecated features
+        db.settings({
+            timestampsInSnapshots: true
+        });
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+   
+ 
+       
+ 
+
+ <script>
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    
+    // Sent user to home.html
+    window.location.href ='home.html';
+  } else {
+    // User is signed out.
+    // Sent user to login.html
+    window.location.href ='login.html';
+  }
+});
+</script>
+
+
+
+     
+   
+</body>
+
+
+</html>
