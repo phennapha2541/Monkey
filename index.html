@@ -1,80 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Onsen App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="ejs.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+  <script src="cordova.js"></script>
 
-    <script src="lib/onsen/js/onsenui.js"></script>
-    <script src="lib/jquery/jquery-3.4.1.min.js"></script>
-    <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
-    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css">
-
-</head>
-<body>
-
-<!-- First navigation component: Navigator. This will remain always on top of the app. -->
-<ons-navigator swipeable id="myNavigator" page="home.html">
-</ons-navigator>
-
- <!-- Second navigation component: Splitter. This will disappear if the first component changes its content. -->
- <template id="splitter.html">
-    <ons-page>
-      <ons-splitter id="mySplitter">
-        <ons-splitter-side id="menu" page="menu.html" swipeable width="250px" collapse swipe-target-width="50px">
-        </ons-splitter-side>
-        <ons-splitter-content id="content" page="login.html">
-        </ons-splitter-content>
-      </ons-splitter>
-    </ons-page>
-  </template>
-
-  <ons-tabbar>
-      <ons-tab page="home.html" active="true">
-        <ons-icon icon="ion-home"></ons-icon>
-        <span style="font-size: 14px">Home</span>
-      </ons-tab>
-      <ons-tab page="fav.html" active="true">
-        <ons-icon icon="ion-star"></ons-icon>
-        <span style="font-size: 14px">Favorites</span>
-      </ons-tab>
-      <ons-tab page="settings.html" active="true">
-        <ons-icon icon="ion-gear-a"></ons-icon>
-        <span style="font-size: 14px">Settings</span>
-      </ons-tab>
-    </ons-tabbar>
-    
-    <ons-template id="home.html">
-      ...
-    </ons-template>
-    
-    <ons-template id="fav.html">
-      ...
-    </ons-template>
-    
-    <ons-template id="settings.html">
-      ...
-    </ons-template>
-
-    <ons-template id=".html">
-        ...
-    </ons-template>
 
   <script>
-      firebase.auth().onAuthStateChanged(function(user) {
-    if (user) {
-      // User is signed in.
-      
-      // Sent user to home.html
-      window.location.href ='home.html';
-    } else {
-      // User is signed out.
-      // Sent user to login.html
-      window.location.href ='login.html';
-    }
-  });
+    // Initialize Firebase
+    var firebaseConfig = {
+      apiKey: "AIzaSyDAlab9BnsyOOMiKOcSlcgvuPDwE9ppc2Y",
+      authDomain: "food247-5905e.firebaseapp.com",
+      databaseURL: "https://food247-5905e.firebaseio.com",
+      projectId: "food247-5905e",
+      storageBucket: "food247-5905e.appspot.com",
+      messagingSenderId: "526310084175",
+      appId: "1:526310084175:web:6a7000ed289e0fb38de43a"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Initialize Cloud Firestore through Firebase
+    var db = firebase.firestore();
+
+    // Disable deprecated features
+    db.settings({
+      timestampsInSnapshots: true
+    });
+  </script>
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+  <script>
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in.
+
+        // Sent user to home.html
+        window.location.href = 'home.html';
+      } else {
+        // User is signed out.
+        // Sent user to login.html
+        window.location.href = 'login.html';
+      }
+    });
   </script>
 
+
+
+
+
 </body>
+
+
 </html>
