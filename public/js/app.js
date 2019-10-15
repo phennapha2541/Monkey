@@ -1,12 +1,12 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyDAlab9BnsyOOMiKOcSlcgvuPDwE9ppc2Y",
-  authDomain: "food247-5905e.firebaseapp.com",
-  databaseURL: "https://food247-5905e.firebaseio.com",
-  projectId: "food247-5905e",
-  storageBucket: "food247-5905e.appspot.com",
-  messagingSenderId: "526310084175",
-  appId: "1:526310084175:web:6a7000ed289e0fb38de43a"
+  apiKey: "AIzaSyDxSowNwNJaGK0XAkmhZ0qVt-vKT0GS614",
+  authDomain: "food247-10746.firebaseapp.com",
+  databaseURL: "https://food247-10746.firebaseio.com",
+  projectId: "food247-10746",
+  storageBucket: "food247-10746.appspot.com",
+  messagingSenderId: "780845371970",
+  appId: "1:780845371970:web:e0f57513c268e832d093db"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
