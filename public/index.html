@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+    content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-  <script src="ejs.js"></script>
-  
-  <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
-  <script src="cordova.js"></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+
+
+  <title>Document</title>
 
   <script>
-
     // Your web app's Firebase configuration
     var firebaseConfig = {
       apiKey: "AIzaSyDxSowNwNJaGK0XAkmhZ0qVt-vKT0GS614",
@@ -27,50 +27,24 @@
       messagingSenderId: "780845371970",
       appId: "1:780845371970:web:e0f57513c268e832d093db"
     };
-    // Initialize Firebase
+
+
     firebase.initializeApp(firebaseConfig);
-
-    // Initialize Cloud Firestore through Firebase
-    var db = firebase.firestore();
-
-    // Disable deprecated features
-    db.settings({
-      timestampsInSnapshots: true
-    });
+    // Initialize Cloud Firestore through Fireba
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        // User is signed in.
+        window.location.href = 'home.html'
+      } else {
+        // User is signed out.
+        window.location.href = 'login.html'
+      }
+    });  
   </script>
-  <title>Document</title>
-
 </head>
 
 <body>
 
-
-
-
-
-  <script>
-    firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        // User is signed in.
-
-        // Sent user to home.html
-        window.location.href = 'home.html';
-      } else {
-        // User is signed out.
-        // Sent user to login.html
-        window.location.href = 'login.html';
-      }
-    });
-
-  
-
-  </script>
-
-
-
-
-
 </body>
-
 
 </html>
