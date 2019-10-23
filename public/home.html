@@ -20,6 +20,10 @@
   <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- badge link -->
+  <link href="//cdn.syncfusion.com/ej2/ej2-base/styles/material.css" rel="stylesheet" />
+  <link href="//cdn.syncfusion.com/ej2/ej2-notifications/styles/material.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.38/system.js"></script>
   <script>
     // Your web app's Firebase configuration
     var firebaseConfig = {
@@ -264,60 +268,28 @@
         </div>
       </ons-toolbar>
 
+
       <div class="content" style="text-align: center;">
         <div class="playlist_content">
-          <ons-carousel class="carousel" swipeable auto-scroll id="carousel">
-            <ons-carousel-item>
-              <div>
-                <figure>
-                  <img class="playlist_thumbnail" src="image/Fast_food1.jpg">
-                  <div class="playlist_title" id="playlist_title">Classical</div>
-                </figure>
-                <div>
+          <!-- <ons-carousel class="carousel" swipeable auto-scroll id="carousel">
+            <ons-carousel-item> -->
+          <div>
 
-                </div>
+            <img class="playlist_thumbnail" src="image/Fast_food1.jpg">
 
-              </div>
-            </ons-carousel-item>
+            <div class="playlist_title" id="playlist_title"></div>
+            <br>
 
-            <ons-carousel-item>
-              <div>
-                <div class="playlist_description">
-                  Though the author is unknown, this playlist offers the best music can offer, from relaxing tracks to
-                  tracks that will make you get on your fit and jump as much as you can! Enjoy ^_^
-                </div>
-                <div>
-                  <div style="font-size: 14px; margin-bottom: 10px;">Created by</div>
-                  <div>
-                    <ons-icon icon="fa-user-circle" size="20px" style="margin-bottom: 10px;"></ons-icon>
-                  </div>
-                  <div class="playlist_username">Unknown</div>
-                </div>
-                <div style="font-size: 14px">
-                  <div style="left: 25px; bottom: 45px; position: absolute;">
-                    <ons-icon icon="fa-calendar-plus-o"></ons-icon> 2017/06/20
-                  </div>
-                  <div style="right: 25px; bottom: 45px; position: absolute;">
-                    <ons-icon icon="fa-clock-o"></ons-icon> 30 min
-                  </div>
-                </div>
-              </div>
-            </ons-carousel-item>
+            <div>
 
-            <div class="cover-label center">
-              <ul>
-                <li>
-                  <div id="dot1" class="circle circle_current">&#x25cf;</div>
-                </li>
-                <li>
-                  <div id="dot2" class="circle">&#x25cf;</div>
-                </li>
-              </ul>
             </div>
-          </ons-carousel>
+
+          </div>
+          <!-- </ons-carousel-item>
+          </ons-carousel> -->
         </div>
 
-        
+
         <div>
           <ons-button class="shuffle">
             <ons-icon style="margin-right: 5px;"></ons-icon> all restaurant
@@ -325,93 +297,10 @@
         </div>
 
         <ons-list class="track_list">
-          <script></script>
-          <ons-list-item onclick="openPlayScreen()" class="track" tappable>
-            <script>
-              db.collection("restaurant").get().then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                  console.log(doc.id, " => ", doc.data());
-                  $("#carousel").append(
-                    '<ons-carousel-item  modifier="nodivider" id="item' + doc.data().id + '"class="track">' +
-                    '<center><div class="list-item__title" style="color:black;" id="item1_' + doc.data().id + '">' + doc.data().name + '</div></center>' +
-                    ' </div></center>' +
-  
-                    '</ons-carousel-item>'
-                  );
-                });
-              });
-            </script>  
-            <div class="center">
-              <div class="list-item__title">Track 01</div>
-              <div class="list-item__subtitle track_title">Unknown Artist - Track 01</div>
-            </div>
-            <div class="right">
-              <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
-            </div>
-          </ons-list-item>
-          <ons-list-item class="track" tappable>
-            <div class="center">
-              <div class="list-item__title">Track 02</div>
-              <div class="list-item__subtitle track_title">Unknown Artist - Track 02</div>
-            </div>
-            <div class="right">
-              <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
-            </div>
-          </ons-list-item>
-          <ons-list-item class="track" tappable>
-            <div class="center">
-              <div class="list-item__title">Track 03</div>
-              <div class="list-item__subtitle track_title">Unknown Artist - Track 03</div>
-            </div>
-            <div class="right">
-              <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
-            </div>
-          </ons-list-item>
-          <ons-list-item class="track" tappable>
-            <div class="center">
-              <div class="list-item__title">Track 04</div>
-              <div class="list-item__subtitle track_title">Unknown Artist - Track 04</div>
-            </div>
-            <div class="right">
-              <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
-            </div>
-          </ons-list-item>
-          <ons-list-item class="track" tappable>
-            <div class="center">
-              <div class="list-item__title">Track 05</div>
-              <div class="list-item__subtitle track_title">Unknown Artist - Track 05</div>
-            </div>
-            <div class="right">
-              <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
-            </div>
-          </ons-list-item>
-          <ons-list-item class="track" tappable>
-            <div class="center">
-              <div class="list-item__title">Track 06</div>
-              <div class="list-item__subtitle track_title">Unknown Artist - Track 06</div>
-            </div>
-            <div class="right">
-              <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
-            </div>
-          </ons-list-item>
-          <ons-list-item class="track" tappable>
-            <div class="center">
-              <div class="list-item__title">Track 07</div>
-              <div class="list-item__subtitle track_title">Unknown Artist - Track 07</div>
-            </div>
-            <div class="right">
-              <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
-            </div>
-          </ons-list-item>
-          <ons-list-item class="track" tappable>
-            <div class="center">
-              <div class="list-item__title">Track 08</div>
-              <div class="list-item__subtitle track_title">Unknown Artist - Track 08</div>
-            </div>
-            <div class="right">
-              <ons-icon icon="ion-ios-more,material:ion-android-more-vertical"></ons-icon>
-            </div>
-          </ons-list-item>
+          <div id="carousel_c"></div>
+
+
+
 
           <ons-toast>
             <div onclick="openPlayScreen()">
@@ -551,8 +440,22 @@
         <div class="left">
           <ons-back-button></ons-back-button>
         </div>
-        <div class="center">FoodMonkey</div>
+        <div class="center" style="text-align: center;">FoodMonkey</div>
+
       </ons-toolbar>
+
+      <ons-speed-dial position="bottom right" direction="up"  onclick="fastfood()">
+        <ons-fab style="background-color: yellow;">
+
+          <div class="">
+            <i class="fas fa-shopping-bag">
+
+            </i></div>
+        </ons-fab>
+        <div style="position:relative;display:inline-block;padding:18px 0px 10px 0px;"  direction="up">
+          <span class="e-badge e-badge-danger e-badge-overlap e-badge-notification e-badge-circle">35</span>
+        </div>
+      </ons-speed-dial>
       <ons-card style="padding-top: 70px;">
         <ons-scroller>
           <div class="center">
@@ -563,150 +466,42 @@
                   <center></center></img>
                 </ons-col>
                 <ons-col>
-                  <h2>The Noodle</h2>
-                  <p style="opacity: 0.6; padding-top: 2px;">
-                    Min Delivery : $25 / Open
-                  </p>
+                  <script>
+                    var nameres = localStorage.getItem("nameres");
+                    document.getElementById("nameres").innerHTML = "Name : " + nameres;
+                  </script>
+                  <h2 id="nameres" style="color: black;"></h2>
+
                 </ons-col>
               </ons-row>
             </div>
-            <div>
+            <!-- <div>
               <span><img src="image/star1.png" alt="Chinese" style="width:100px;height:40px;"></img></span>
               <p6 style="opacity: 0.4; padding-top: 0px;">
                 27 Reviews
               </p6>
-            </div>
+            </div> -->
           </div>
           <ons-list>
-            <ons-list-header>Starters</ons-list-header>
-            <ons-row>
-              <ons-col>
-                <ons-list-item modifier="tappable">Chicken Soup</ons-list-item>
-              </ons-col>
-              <ons-col width="70px">
-                <ons-list-item modifier="tappable">$12</ons-list-item>
-              </ons-col>
-              <ons-col width="50px">
-                <ons-button modifier="material">+</ons-button>
-              </ons-col>
-            </ons-row>
-            <ons-row>
-              <ons-col>
-                <ons-list-item modifier="tappable">Chicken Chowmein</ons-list-item>
-              </ons-col>
-              <ons-col width="70px">
-                <ons-list-item modifier="tappable">$36</ons-list-item>
-              </ons-col>
-              <ons-col width="50px">
-                <ons-button modifier="material">+</ons-button>
-              </ons-col>
-            </ons-row>
-            <ons-row>
-              <ons-col>
-                <ons-list-item modifier="tappable">Beef Noodles Guacmole</ons-list-item>
-              </ons-col>
-              <ons-col width="70px">
-                <ons-list-item modifier="tappable">$9</ons-list-item>
-              </ons-col>
-              <ons-col width="50px">
-                <ons-button modifier="material">+</ons-button>
-              </ons-col>
-            </ons-row>
+            <ons-list-header>menu</ons-list-header>
+            <div id="listres"></div>
+           
+            
 
-            <ons-list-header>Mains</ons-list-header>
 
-            <ons-row>
-              <ons-col>
-                <ons-list-item modifier="tappable">The Noodle Special Sauce</ons-list-item>
-              </ons-col>
-              <ons-col width="70px">
-                <ons-list-item modifier="tappable">$12</ons-list-item>
-              </ons-col>
-              <ons-col width="50px">
-                <ons-button modifier="material">+</ons-button>
-              </ons-col>
-            </ons-row>
-            <ons-row>
-              <ons-col>
-                <ons-list-item modifier="tappable">The Prawn Noodle Bowl</ons-list-item>
-              </ons-col>
-              <ons-col width="70px">
-                <ons-list-item modifier="tappable">$36</ons-list-item>
-              </ons-col>
-              <ons-col width="50px">
-                <ons-button modifier="material">+</ons-button>
-              </ons-col>
-            </ons-row>
-            <ons-row>
-              <ons-col>
-                <ons-list-item modifier="tappable">Honey Chicken with Fried Rice</ons-list-item>
-              </ons-col>
-              <ons-col width="70px">
-                <ons-list-item modifier="tappable">$9</ons-list-item>
-              </ons-col>
-              <ons-col width="50px">
-                <ons-button modifier="material">+</ons-button>
-              </ons-col>
-            </ons-row>
-            <ons-row>
-              <ons-col>
-                <ons-list-item modifier="tappable">Avacado Beef Chilli and Noodles
-                </ons-list-item>
-              </ons-col>
-              <ons-col width="70px">
-                <ons-list-item modifier="tappable">$9</ons-list-item>
-              </ons-col>
-              <ons-col width="50px">
-                <ons-button modifier="material">+</ons-button>
-              </ons-col>
-            </ons-row>
-          </ons-list>
-        </ons-scroller></br>
 
-        <button class="button button--light" style="width: 98%; margin: 0 auto;">
-          <ons-row>
-            <ons-col width="10%">
-              <div>
-                Drinks
-              </div>
-            </ons-col>
-            <ons-col></ons-col>
-            <ons-col width="5%">
-              <div>
-                +
-              </div>
-            </ons-col>
-          </ons-row>
-        </button></br></br>
-
-        <button class="button button--light" style="width: 98%; margin: 0 auto;">
-          <ons-row>
-            <ons-col width="10%">
-              <div>
-                Deserts
-              </div>
-            </ons-col>
-            <ons-col></ons-col>
-            <ons-col width="5%">
-              <div>
-                +
-              </div>
-            </ons-col>
-          </ons-row>
-        </button></br></br>
-
-        <ons-button onclick="myToast.toggle()">Confirm Oder</ons-button>
+            <!-- <ons-button onclick="myToast.toggle()">Confirm Oder</ons-button>
         <ons-toast id="myToast" animation="ascend">
           Your Order : $34
           <button onclick="fastfood()">Order</button>
-        </ons-toast>
-      </ons-card>
+        </ons-toast> -->
 
-      <style>
-        #mypage .page__background {
-          background-color: gold;
-        }
-      </style>
+
+            <style>
+              #mypage .page__background {
+                background-color: gold;
+              }
+            </style>
     </ons-page>
     </center>
   </template>
@@ -893,10 +688,10 @@
 
         //the postchange event is used to change the dots indicating which carousel is currently displayed
 
-        page.querySelector('#carousel').addEventListener("postchange", function () {
-          page.querySelector('#dot1').classList.toggle("circle_current");
-          page.querySelector('#dot2').classList.toggle("circle_current");
-        });
+        // page.querySelector('#carousel').addEventListener("postchange", function () {
+        //   page.querySelector('#dot1').classList.toggle("circle_current");
+        //   page.querySelector('#dot2').classList.toggle("circle_current");
+        // });
 
       }
 
@@ -924,8 +719,22 @@
         .get()
         .then(function (querySnapshot) {
           querySnapshot.forEach(function (doc) {
-            // doc.data() is never undefined for query doc snapshots
+            // doc.data() is never undefined for query doc 
+            console.log("QQ");
+
             console.log(doc.id, " => ", doc.data());
+            $("#carousel_c").append(
+              '<ons-list-item onclick="openPlayScreen(' + "'" + doc.data().name + "'" + ')">' +
+              ' <div class="left">' +
+              '<img class="list-item__thumbnail" src="' + doc.data().photoUrl + '">' +
+              '</div>' +
+              '<div class="center">' +
+              ' <span class="list-item__title"  style="color: black;">name restaurants :' + doc.data().name + '</span><span class="list-item__subtitle"  style="color: black;">ที่อยู่ :' + doc.data().address + '</span>' +
+              '</div>' +
+              ' </ons-list-item>'
+
+            )
+
           });
         })
         .catch(function (error) {
@@ -943,10 +752,138 @@
       document.getElementById("play_icon").classList.add("fa-pause-circle-o");
     }
 
-    function openPlayScreen() {
-      document.querySelector('#navigator').pushPage('menunoodle.html', { animation: "lift" });
+    function openPlayScreen(nameres) {
+      var res = nameres;
+      console.log("res ::" + res);
+      localStorage.setItem('nameres', res);
+
+      db.collection("restaurant").where("name", "==", res)
+        .get()
+        .then(function (querySnapshot) {
+          querySnapshot.forEach(function (doc) {
+            // doc.data() is never undefined for query doc 
+
+
+            console.log(doc.id, " => ", doc.data());
+            localStorage.setItem('docref', doc.id);
+            listmenu();
+
+          });
+        })
+        .catch(function (error) {
+          console.log("Error getting documents: ", error);
+        });
+
+
     }
 
+    function listmenu() {
+      document.querySelector('#navigator').pushPage('menunoodle.html', { animation: "lift" });
+      var docref = localStorage.getItem("docref");
+      console.log(docref);
+
+      db.collection('restaurant').doc(docref).collection('menu').get()
+        .then(function (querySnapshot) {
+          querySnapshot.forEach(function (doc) {
+            // doc.data() is never undefined for query doc 
+            console.log(doc.id, " => ", doc.data());
+            $("#listres").append(
+              '<ons-row>' +
+              '<ons-col>' +
+              '<ons-list-item modifier="tappable">' + doc.data().name + '</ons-list-item>' +
+              ' </ons-col>' +
+              ' <ons-col width="70px">' +
+              ' <ons-list-item modifier="tappable">฿' + doc.data().price + '</ons-list-item>' +
+              ' </ons-col>' +
+              '<ons-col width="50px">' +
+              ' <ons-button modifier="material" onclick="add(' + "'" + doc.data().pid + "'" + ')">+</ons-button>' +
+              '</ons-col>' +
+              '  </ons-row>'
+
+            )
+
+          });
+        })
+        .catch(function (error) {
+          console.log("Error getting documents: ", error);
+        });
+    }
+
+    var dataCart = [];
+function add(add){
+  localStorage.clear('pid');
+localStorage.setItem('pid',add);
+var retrievedData = localStorage.getItem("pid");
+console.log(retrievedData);
+dataCart.push(retrievedData);
+
+ ons.notification.toast("เพิ่มสินค้าใส่ตะกร้า", {
+    timeout: 2000
+  });
+  $("#Fillbadge").attr('badge', dataCart.length);
+}
+
+
+function showAdd(){
+  $("#Fillbadge").attr('badge','');
+  
+  document.getElementById('pic').innerHTML=""
+  console.log(dataCart);
+  
+var num = 0;
+  dataCart.forEach(function(dataCart){
+    var apr = db.collection("PRODUCTS").where("pid","==",dataCart);
+    apr.get().then(function (querySnapshot) {
+      console.log(querySnapshot.docs)
+      var pic_template = $('#pic_template').html();
+      var  html = ejs.render(pic_template, { cart: querySnapshot.docs,num:num });
+      console.log(html);
+
+     
+      
+     $('#pic').append(html);
+        num = num +1;
+    })  
+  })
+ 
+}
+
+function remove(i) {
+  console.log(i);
+
+  console.log(dataCart);
+  
+  var remove= dataCart.splice(i,1)
+
+   ons.notification.toast("สินค้าถูกลบเรียบร้อยเเล้ว", {
+    timeout: 2000
+  });
+  $("#Fillbadge").attr('badge', dataCart.length);
+
+  showAdd()
+
+}
+var price = 0;
+
+  function totalprice(priceadd) {
+    var priceadd = parseInt(priceadd, 10)
+    console.log(priceadd);
+
+    price = price + priceadd;
+    $('#showprice').html("<p><b>&nbsp; Total Price is : </b>" + price + " ฿</p>");
+
+  }
+  function removeprice(pricedel) {
+    var pricedel = parseInt(pricedel, 10)
+    console.log(pricedel);
+
+    price = price - pricedel;
+    if(price==0){document.getElementById('showprice').innerHTML=''
+    }
+    else{$('#showprice').html("<p><b>&nbsp; Total Price is : </b>" + price + " ฿</p>");}
+
+  }
+  
     function fastfood() {
       document.querySelector('#navigator').pushPage('payment.html', { animation: "lift" });
     }
